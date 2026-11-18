@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Record Readiness Checker</masterLabel>
+    <description
+  >Readiness checklist for five direct fields with refresh and a record edit action.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property
+        name="title"
+        type="String"
+        label="Checklist title"
+        default="Record Readiness"
+      />
+            <property
+        name="fieldsCsv"
+        type="String"
+        label="Five field API names (comma-separated)"
+        default="Name,CloseDate,StageName,Amount,Description"
+        description="Five direct fields on the record, e.g. Name,CloseDate,StageName,Amount,Description"
+      />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

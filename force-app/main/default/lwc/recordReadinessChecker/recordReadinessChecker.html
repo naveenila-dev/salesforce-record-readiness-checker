@@ -1,0 +1,80 @@
+<template>
+  <lightning-card title={title} icon-name="utility:check">
+    <div
+      class="slds-is-relative slds-p-horizontal_medium slds-p-bottom_medium"
+      aria-busy={busy}
+    >
+      <template lwc:if={message}>
+        <div role="alert" class="slds-text-color_error slds-m-bottom_small">
+          {message}
+        </div>
+      </template>
+      <template lwc:if={busy}>
+        <lightning-spinner
+          alternative-text={loadingText}
+          size="small"
+        ></lightning-spinner>
+      </template>
+      <div aria-live="polite" aria-atomic="true">
+        <template lwc:if={hasRows}>
+          <div class="slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+            <strong>{overallStatus}</strong>
+            <span>{passedCount} of 5 complete ({percent}%)</span>
+          </div>
+        </template>
+      </div>
+      <template lwc:if={hasRows}>
+        <lightning-progress-bar
+          value={percent}
+          size="medium"
+        ></lightning-progress-bar>
+        <ul
+          class="slds-m-top_medium"
+          aria-label="Record readiness requirements"
+        >
+          <template for:each={rows} for:item="row">
+            <li
+              key={row.key}
+              class="slds-grid slds-grid_vertical-align-center slds-p-vertical_x-small"
+            >
+              <lightning-icon
+                icon-name={row.iconName}
+                variant={row.iconVariant}
+                size="x-small"
+                alternative-text={row.detail}
+                class="slds-m-right_small"
+              ></lightning-icon>
+              <div>
+                <div>{row.number}. {row.label}</div>
+                <div class="slds-text-body_small slds-text-color_weak">
+                  {row.detail}
+                </div>
+              </div>
+            </li>
+          </template>
+        </ul>
+      </template>
+      <template lwc:if={showActions}>
+        <div
+          class="slds-m-top_medium slds-grid slds-wrap slds-grid_vertical-align-center"
+        >
+          <template lwc:if={showEdit}>
+            <lightning-button
+              label="Edit record"
+              icon-name="utility:edit"
+              onclick={handleEdit}
+              disabled={busy}
+              class="slds-m-right_small"
+            ></lightning-button>
+          </template>
+          <lightning-button
+            label={refreshLabel}
+            icon-name="utility:refresh"
+            onclick={handleRefresh}
+            disabled={disableRefresh}
+          ></lightning-button>
+        </div>
+      </template>
+    </div>
+  </lightning-card>
+</template>
