@@ -309,10 +309,10 @@ record-readiness-checker/
 
 - [Salesforce `getRecord` wire adapter](https://developer.salesforce.com/docs/platform/lwc/guide/reference-wire-adapters-record)
 - [Record page target configuration](https://developer.salesforce.com/docs/platform/lwc/guide/targets-lightning-record-page.html)
-- [Record page object context](https://developer.salesforce.com/docs/platform/lwc/guide/use-object-context.html)
-- [Notify record update available](https://developer.salesforce.com/docs/platform/lwc/guide/reference-notify-record-update.html)
-- [Salesforce CLI package commands](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_package.html)
-- [Second-generation packaging](https://developer.salesforce.com/docs/platform/pkg2-dev/guide/sfdx-dev-dev2gp.html)
+- [Record page object context](https://developer.salesforce.com/docs/platform/lwc/guide/use-object-context)
+- [Lightning Data Service refresh guidance (`notifyRecordUpdateAvailable`)](https://developer.salesforce.com/docs/platform/lwc/guide/data-guidelines)
+- [Salesforce CLI package commands (official plugin reference)](https://github.com/salesforcecli/plugin-packaging#commands)
+- [Second-generation managed packaging (Salesforce Trailhead)](https://trailhead.salesforce.com/content/learn/modules/second-generation-managed-packages)
 
 ## License
 
